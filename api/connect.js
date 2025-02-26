@@ -1,7 +1,9 @@
 import { MongoClient } from "mongodb";
+import dotenv from 'dotenv'
 
-const URI =
-  "mongodb+srv://legenddesign:legenddevtest123@cluster0.bf4to.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+dotenv.config({path: "../.env"})
+
+const URI = process.env.URI_DATABASE;
 
 const client = new MongoClient(URI);
 
