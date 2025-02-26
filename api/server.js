@@ -11,15 +11,18 @@ const PORT = process.env.PORT;
 app.use(cors())
 
 app.get("/", (req, res)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header("Access-Control-Allow-Origin", 'true')
     res.send('Olá, Mundo')
 })
 app.get("/artists", async (req, res)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header("Access-Control-Allow-Origin", 'true')
     res.send(await db.collection("artists").find({}).toArray())
 })
 app.get("/songs", async (req, res)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header("Access-Control-Allow-Origin", 'true')
     res.send(await db.collection("songs").find({}).toArray())
 })
 
