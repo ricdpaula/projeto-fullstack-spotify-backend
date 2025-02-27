@@ -10,6 +10,15 @@ const PORT = process.env.PORT;
 
 app.use(cors());
 
+app.use(cors(), function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://projeto-fullstack-spotify.vercel.app/"); // update to match the domain you will make the request from
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.get("/", (req, res) => {
   res.send("Olá, Mundo");
 });
