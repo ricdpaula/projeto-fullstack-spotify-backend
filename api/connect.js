@@ -1,7 +1,7 @@
-import { MongoClient } from "mongodb";
 import dotenv from 'dotenv'
+import { MongoClient } from "mongodb";
 
-dotenv.config({path: "../.env"})
+dotenv.config()
 
 const URI = process.env.URI_DATABASE;
 

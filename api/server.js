@@ -1,21 +1,12 @@
+import dotenv from "dotenv";
 import express from "express";
 import { db } from "./connect.js";
 import cors from "cors";
-import dotenv from "dotenv";
 
-dotenv.config({ path: "../.env" });
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
-
-app.use(cors(), function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 
 app.use(cors());
 
