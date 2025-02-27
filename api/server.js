@@ -11,15 +11,15 @@ const PORT = process.env.PORT;
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.header({ "Access-Control-Allow-Origin": "http://localhost:3000" });
+  res.header({ "Access-Control-Allow-Origin": "*" });
   res.send("Olá, Mundo");
 });
 app.get("/artists", async (req, res) => {
-  res.header({ "Access-Control-Allow-Origin": "http://localhost:3000" })
+  res.header({ "Access-Control-Allow-Origin": "*" })
   res.send(await db.collection("artists").find({}).toArray());
 });
 app.get("/songs", async (req, res) => {
-  res.header({ "Access-Control-Allow-Origin": "http://localhost:3000" })
+  res.header({ "Access-Control-Allow-Origin": "*" })
   res.send(await db.collection("songs").find({}).toArray());
 });
 
